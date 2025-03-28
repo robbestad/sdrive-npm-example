@@ -2,13 +2,13 @@ import "dotenv/config";
 import { SDrive } from "sdrive";
 
 const sdrive = new SDrive(process.env.SDRIVE_API_KEY, process.env.USER_GUID);
-sdrive.network = "ipfs";
-const filePath = "./sdrive.png";
+sdrive.page = 1;
+sdrive.limit = 2;
 await sdrive
-  .upload(filePath, "sdrive.png")
+  .listObjects()
   .then((response) => {
-    console.log("Upload successful:", response);
+    console.log(response);
   })
   .catch((error) => {
-    console.error("Upload failed:", error);
+    console.error("List failed:", error);
   });

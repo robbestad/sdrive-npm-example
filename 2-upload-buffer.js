@@ -1,12 +1,11 @@
-import SDrive from "sdrive";
-import fs from "fs/promises";
-import dotenv from "dotenv";
-dotenv.config();
+import "dotenv/config";
+import { SDrive } from "sdrive";
 
-const sdrive = new SDrive(process.env.SDRIVE_API_KEY);
+const sdrive = new SDrive(process.env.SDRIVE_API_KEY, process.env.USER_GUID);
+sdrive.network = "ipfs";
 
 const filename = "data.json";
-const filedata = { data: "Hello world" };
+const filedata = { data: "Hello world from SDrive" };
 
 const jsonString = JSON.stringify(filedata); // Convert JSON object to a string
 const buffer = Buffer.from(jsonString); // Convert string to a Buffer
