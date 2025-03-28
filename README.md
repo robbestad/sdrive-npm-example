@@ -123,16 +123,14 @@ try {
 ### Common Issues
 
 1. **API Key Not Working**
-   - Verify that the API key is correctly copied to the `.env` file
+   - Verify that the API key and  user GUID is correctly copied to the `.env` file
    - Check if the API key is active in the SDrive dashboard
 
 2. **Upload Failing**
    - Check if the file size doesn't exceed the limit
-   - Verify that you have sufficient credit on your account
 
 3. **Network Issues**
    - Check your internet connection
-   - Verify that the selected network is available
 
 ## License
 
